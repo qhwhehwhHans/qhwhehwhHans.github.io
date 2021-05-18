@@ -15,42 +15,39 @@ tags:
 <br>
 
 ###### 해당 글은 다음 사이트의 내용을 정리하였습니다.
-* android 공식 사이트<<https://source.android.com/setup/start?hl=ko>>
-* 제가 처음 참고한 블로그<<https://programist.tistory.com/>>
+* android 공식 사이트 <https://source.android.com/setup/start?hl=ko>
+* 제가 처음 참고한 블로그 <https://programist.tistory.com/>
 
 <br>
 해당 포스트는 AOSP를 build하고, 실제 기기에 이미지를 올리는 방법을 설명하려고 합니다.
 <br>
 
 # 시작 전 확인사항
-1. AOSP 코드를 다운받았는지? (이전 포스트를 참고하기 바랍니다.)
+1. AOSP 코드를 다운받았는지? (이전 글을 참고하기 바랍니다.)
 2. HDD or SSD에 저장 공간이 남아있는지? (필자생각: build하면서 용량이 커졌다 작아진다.)
-3. 시간이 많이 있는지? (필자생각: 처음 build는 2~3시간 정도 소모된다...)
+3. 시간이 많이 있는지? (처음 build는 2~3시간 정도 소모된다...)
 
 <br>
 
 # 현재 상태(AOSP코드 다운 완료)
 ![cli환경 ls명령어 입력한 상태](/assets/images/post2/image1.PNG)
 아마 AOSP가 모두 다운되면 해당 디렉토리에 위와 같은 파일들이 다운된다.
-build를 진행하기 전에 실제 기기에 필요한 `드라이버 .sh파일`이 필요하다.
+build를 진행하기 전에 실제 기기에 필요한 **드라이버 .sh파일**이 필요하다.
 
 <br>
 
 # 드라이버 파일 다운로드 방법
-자신 AOSP에 맞는 드라이버를 찾기 위해 아래 사진에 나온 표에서 다운받은 버전의 가장 앞 열(빌드)를 알아야한다. <<https://source.android.com/setup/start/build-numbers?hl=ko>>
+자신 AOSP에 맞는 드라이버를 찾기 위해 아래 사진에 나온 표에서 다운받은 버전의 가장 앞 열(빌드)를 알아야한다. <https://source.android.com/setup/start/build-numbers?hl=ko>
 ![aosp빌드버전 확인](/assets/images/post2/image2.PNG)
 
-<br>
 
 위 내용을 확인하면 <https://developers.google.com/android/drivers> 해당 사이트로 이동하여 방금 확인한 빌드와 같은 드라이버 파일을 찾으면 된다.
 ![드라이버 파일 확인](/assets/images/post2/image3.PNG)
 필자는 11.0.0_r27에 맞는 드라이버를 ctrl+f로 찾았다. 주의사항으로는 본인 핸드폰 기기도 확인을 해야한다.(필자는 pixel 4xl를 사용하여 실험을 진행하였다.)
 
-확인 후 Download의 두 Link를 다운받는다. 해당 파일은 tar.gz이며, 압축을 해제하면 각 1개 총 2개의 .sh파일을 얻을 수 있다. 해당 .sh파일을 AOSP소스코드가 있는 디렉토리로 이동시키면 된다.
-(다운방법 1. wget 명령어 사용, 2. GUI환경으로 다운 후 이동)
-(필자는 2번 방법을 사용했다.)
-
-<br>
+확인 후 Download의 두 Link를 다운받는다. 해당 파일은 tar.gz이며, 압축을 해제하면 각 1개 총 2개의 .sh파일을 얻을 수 있다. 해당 .sh파일을 AOSP소스코드가 있는 디렉토리로 이동시키면 된다. 
+* (다운방법 1. wget 명령어 사용, 2. GUI환경으로 다운 후 이동)
+* (필자는 2번 방법을 사용했다.)
 
 결과적으로 다음 화면처럼 된다.
 ![터미널 화면](/assets/images/post2/image4.PNG)
@@ -105,15 +102,12 @@ make
 개발자 옵션에 `oem unlocking`을 찾으면 쉽게 찾을 수 있다.
 (1회만 진행하면 된다.)
 
-<br>
 
 2. bootloader 진입
 ```
 adb reboot bootloader
 ```
 위 명령어를 입력하기 전에 스마트폰을 해당 linux컴퓨터와 연결해야한다.(usb)
-
-<br>
 
 3. bootloader화면에 lock이라고 표시된다면
 ```
