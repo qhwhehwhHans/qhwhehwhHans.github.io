@@ -14,7 +14,7 @@ tags:
 
 <br>
 
-###### 해당 글은 다음 사이트의 내용을 정리하였습니다.
+###### 해당 글은 다음 사이트의 내용을 참고하여 정리하였습니다.
 * android 공식 사이트<https://source.android.com/setup/start?hl=ko>
 * 제가 처음 참고한 블로그<https://programist.tistory.com/>
 
