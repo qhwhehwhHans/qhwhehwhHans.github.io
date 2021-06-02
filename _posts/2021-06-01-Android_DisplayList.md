@@ -11,6 +11,7 @@ tags:
 
 진짜 DisplayList를 보고 싶으신 분들을 위해 작성하는 포스트입니다.
 필요한 사람에게 도움이 되었으면 합니다.
+(틀린 부분이 있으면 메일 부탁드립니다. qhwhehwh@naver.com)
 
 <br>
 
@@ -41,6 +42,7 @@ android는 view를 tree형식으로 관리하고 있다.(아마 모두 아시겠
 ## onDraw
 View.java에 onDraw함수은 아래와 같이 코드가 작성되어 있다.
 ![onDraw함수](/assets/images/post4/image3.PNG)
+<br>
 17783번 줄에 주석처럼, view를 상속받은 자식 view는 onDraw함수를 재정의해야한다. 다시 말해 자신이 어떻게 그려져야 하는지 정의해야하고, 그 정의는 인자 canvas에 api를 사용해서 정의하면 된다. 예를 보자
 ![imageView](/assets/images/post4/image4.PNG)
 위 사진은 imageView의 onDraw함수이다. 표시한 부분은 imageView객체의 drawable객체를 첫 번째 인자인 canvas에 draw하는 모습을 보여준다. 다른 view들도 위와 같은 방법으로 canvas에 drawing api를 호출한다. 사실 여기서 사용되는 RecordingCanvas객체로서(android 11버전은 BaseRecordingCanvas클래스이다), 호출한 api들은 기록하여 DisplayList객체에 데이터로 남는다. 
