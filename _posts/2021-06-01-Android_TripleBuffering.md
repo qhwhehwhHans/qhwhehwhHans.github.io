@@ -60,7 +60,7 @@ adb shell dumpsys SurfaceFlinger
 
 ## QuadBuffer?
 ![quadBuffer](/assets/images/post5/image5.PNG)
-TripleBuffering을 더욱 자세히 이해하기 위해서 RingBuffer을 알아야 하는데.... 갑자기 android11에서 Quad buffer라뇨...... 저도 이제 알았습니다....ㅠㅠ
+TripleBuffering을 더욱 자세히 이해하기 위해서 RingBuffer을 알아야 하는데.... 갑자기 android11에서 Quad buffer라뇨...... 저도 이제 알았습니다....ㅠㅠ**하지만 구글 공식사이트에서 정보를 찾아보고 정확하게 다시 작성하겠습니다.**
 
 # 고민 중
 다음 설명을 Triple롤 설명해야하는지... Quad로 설명해야하는지....
